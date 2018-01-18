@@ -168,6 +168,8 @@
         </plugins>
     </reporting>
 
+    <url>https://github.com/alleyZ/java-practice</url>
+
     <ciManagement>
         <url>http://10.8.177.28:18082/</url>
     </ciManagement>
