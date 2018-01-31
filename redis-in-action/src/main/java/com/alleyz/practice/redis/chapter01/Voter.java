@@ -1,4 +1,4 @@
-package com.alleyz.practice.redis.article;
+package com.alleyz.practice.redis.chapter01;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ZParams;

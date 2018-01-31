@@ -11,6 +11,7 @@
     <modules>
         <module>concurrent-practice</module>
         <module>redis-in-action</module>
+        <module>es-in-action</module>
     </modules>
 
     <properties>
