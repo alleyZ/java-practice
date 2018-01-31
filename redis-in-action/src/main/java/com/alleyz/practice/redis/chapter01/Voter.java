@@ -3,8 +3,6 @@ package com.alleyz.practice.redis.chapter01;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ZParams;
 
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.*;
 
 /**
