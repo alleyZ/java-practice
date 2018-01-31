@@ -16,14 +16,12 @@ import java.util.*;
  * 文章评分
  *  支持票数 * 432 + pubDate
  *
- * zset1: 文章id，分数文章发布时间
- * zset2: 文章id，分数文章评分
  *
  * @author alleyz
  *
  */
 public class Voter {
-    public final static String ARTICLE_ID_PRE = "article:";
+    private final static String ARTICLE_ID_PRE = "article:";
     private final static String GROUP_PRE = "group:";
     private final static int ONE_WEEK_SECONDS = 7 * 24 * 60 * 60;
     private final static int VOTE_SCORE = 432;
@@ -32,7 +30,7 @@ public class Voter {
 
     private final Jedis conn;
 
-    public Voter(Jedis conn) {
+    Voter(Jedis conn) {
         this.conn = conn;
     }
     /**
@@ -68,7 +66,7 @@ public class Voter {
      * @param user 用户
      * @param articleId 文章
      */
-    void vote(String user, String articleId) throws Exception{
+    void vote(String user, String articleId){
         long timeDiff = System.currentTimeMillis() / 1000 - ONE_WEEK_SECONDS;
         String article = ARTICLE_ID_PRE + articleId;
         if(conn.zscore(TIME_K, article) < timeDiff) {
