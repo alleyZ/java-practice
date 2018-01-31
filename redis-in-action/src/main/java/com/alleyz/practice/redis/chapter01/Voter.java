@@ -166,7 +166,7 @@ class Article{
     String votes;
     @Override
     public String toString() {
-        // oo
+
         return String.format("Article=id:%s,title:%s,user:%s,votes:%s", id, title, user, votes);
     }
 }
