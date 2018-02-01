@@ -1,10 +1,8 @@
 package com.alleyz.practice.redis.chapter02;
 
 import com.alleyz.practice.redis.chapter02.mock.IRedisMock;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.runners.MethodSorters;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -17,6 +15,7 @@ import java.util.List;
  *
  * @author alleyz
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TokenTest {
 
     private List<String> users;
@@ -46,7 +45,7 @@ public class TokenTest {
 
 
     @Test
-    public void testUpdateToken() {
+    public void test1UpdateToken() {
         this.users.forEach(s -> {
             token.updateToken("token-" + s, s, items.get(0));
         });
@@ -62,7 +61,7 @@ public class TokenTest {
     }
 
     @Test
-    public void testCheckToken() {
+    public void test2CheckToken() {
         Assert.assertNull(this.token.checkToken("token-user-1"));
         Assert.assertEquals(this.token.checkToken("token-user-7"), "user-7");
     }
