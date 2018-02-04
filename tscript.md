@@ -35,4 +35,34 @@
 - 只读属性：`interface a {readonly a2: string}; let ra: ReadonlyArray<string> = ["1", "2"]`
 - 函数类型：`interface SearchFun{ (s2: string, s3: string): boolean;}`
 
+## 类
 
+- public：默认为public，
+- private：可被子类共享
+- readonly: 只读属性必须在构造函数中或者声明时赋值
+- 派生类的构造函数必须调用`super()`
+- 在构造函数里边访问`this`时，必须调用`super()`
+- 存取器：只有get不带set的存取器自动被推断为readonly
+- 静态属性： static
+- 抽象类，抽象方法：abstract
+- 接口可以`extends`类
+
+## 函数
+
+- 函数类型，可以为函数定义入参类型以及返回值类型，也可根据返回值推断类型
+- 可选参数： `function a(a?: number) {}`
+- 剩余参数，`function a(a: number, ...b: string[]){}`
+- 箭头函数：箭头函数能保存函数创建时的this值
+- this： `function (this: Deck) { this.name;}`
+- 重载：在定义重载时，需要将最精确的放在最上边
+
+## 泛型
+
+- `function A<T>(a: T): T {}`
+- 和Java类似
+
+## 枚举
+
+- 普通枚举：如果没有初始化方法被当做常数枚举
+- 常数枚举：在使用的地方被嵌入进来
+- 外部枚举：没有初始化方法时被当做需要计算的枚举；
