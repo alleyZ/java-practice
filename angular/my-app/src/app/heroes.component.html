@@ -6,6 +6,7 @@
       (click)="onSelect(heo)"
   >
     <span class="badge">{{heo.id}}</span>{{heo.name}}
+    <button class="delete" (click)="delete(heo); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedHero">
@@ -13,4 +14,9 @@
     {{selectedHero.name | uppercase}} is my hero
   </h2>
   <button (click)="gotoDetail()">View Details</button>
+</div>
+<div>
+  <label>Hero Name:</label>
+  <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
